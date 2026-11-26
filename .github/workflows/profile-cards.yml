@@ -20,13 +20,13 @@ jobs:
   cards:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Stats card (light)
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
-          options: '{"show_icons":"true","include_all_commits":"true","hide":"stars,issues","hide_rank":"true","hide_border":"true","theme":"default","custom_title":"GitHub Stats"}'
+          options: '{"show_icons":"true","include_all_commits":"true","hide":"stars,issues,contribs","show":"prs_merged","hide_rank":"true","hide_border":"true","theme":"default","custom_title":"GitHub Stats"}'
           path: profile/stats-light.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
@@ -35,7 +35,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
-          options: '{"show_icons":"true","include_all_commits":"true","hide":"stars,issues","hide_rank":"true","hide_border":"true","theme":"github_dark","custom_title":"GitHub Stats"}'
+          options: '{"show_icons":"true","include_all_commits":"true","hide":"stars,issues,contribs","show":"prs_merged","hide_rank":"true","hide_border":"true","theme":"github_dark","custom_title":"GitHub Stats"}'
           path: profile/stats-dark.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
@@ -44,7 +44,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: '{"layout":"compact","langs_count":"8","hide":"jupyter notebook,html,css","hide_border":"true","theme":"default"}'
+          options: '{"layout":"compact","langs_count":"8","hide":"jupyter notebook,html,css,tcl","hide_border":"true","theme":"default"}'
           path: profile/top-langs-light.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
@@ -53,7 +53,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: '{"layout":"compact","langs_count":"8","hide":"jupyter notebook,html,css","hide_border":"true","theme":"github_dark"}'
+          options: '{"layout":"compact","langs_count":"8","hide":"jupyter notebook,html,css,tcl","hide_border":"true","theme":"github_dark"}'
           path: profile/top-langs-dark.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
